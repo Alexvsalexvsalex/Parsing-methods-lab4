@@ -1,0 +1,120 @@
+Double val
+
+start = e
+#
+node.val = node.ch[0].val;
+#S
+#P
+
+e = t es
+#
+node.val = node.ch[0].val + node.ch[1].val;
+#S
+#P
+
+es = PLUS t es
+#
+node.val = node.ch[1].val + node.ch[2].val;
+#S
+#P
+
+es = MINUS t es
+#
+node.val = -node.ch[1].val + node.ch[2].val;
+#S
+#P
+
+es =
+#
+node.val = 0.0;
+#S
+#P
+
+t = f ts
+#
+node.val = node.ch[0].val * node.ch[1].val;
+#S
+#P
+
+ts = MULT f ts
+#
+node.val = node.ch[1].val * node.ch[2].val;
+#S
+#P
+
+ts = DIV f ts
+#
+node.val = 1 / node.ch[1].val * node.ch[2].val;
+#S
+#P
+
+ts =
+#
+node.val = 1.0;
+#S
+#P
+
+f = LBRACKET e RBRACKET pow
+#
+node.val = Math.pow(node.ch[1].val, node.ch[3].val);
+#S
+#P
+
+f = VALUE pow
+#
+node.val = Math.pow(node.ch[0].val, node.ch[1].val);
+#S
+#P
+
+pow = POW f
+#
+node.val = node.ch[1].val;
+#S
+#P
+
+pow =
+#
+node.val = 1.0;
+#S
+#P
+
+VALUE = \\d+
+#
+node.val = Double.parseDouble(node.str);
+#S
+#P
+
+PLUS = [+]
+#
+#S
+#P
+
+MINUS = [-]
+#
+#S
+#P
+
+POW = [*][*]
+#
+#S
+#P
+
+MULT = [*]
+#
+#S
+#P
+
+DIV = [/]
+#
+#S
+#P
+
+LBRACKET = [(]
+#
+#S
+#P
+
+RBRACKET = [)]
+#
+#S
+#P

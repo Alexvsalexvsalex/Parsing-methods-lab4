@@ -1,0 +1,110 @@
+
+start = definition
+#
+#S
+#P
+
+definition = DEF NAME LBRACKET arguments RBRACKET EQ
+#
+#S
+#P
+
+arguments =
+#
+#S
+#P
+
+arguments = MULT aargs
+#
+#S
+#P
+
+arguments = NAME defval typedef argumentss
+#
+#S
+#P
+
+argumentss =
+#
+#S
+#P
+
+argumentss = COMMA arguments
+#
+#S
+#P
+
+aargs = MULT NAME
+#
+#S
+#P
+
+aargs = NAME
+#
+#S
+#P
+
+typedef =
+#
+#S
+#P
+
+typedef = COLON NAME
+#
+#S
+#P
+
+defval =
+#
+#S
+#P
+
+defval = EQ VALUE
+#
+#S
+#P
+
+DEF = [d][e][f]
+#
+#S
+#P
+
+NAME = [a-z]+
+#
+#S
+#P
+
+LBRACKET = [(]
+#
+#S
+#P
+
+RBRACKET = [)]
+#
+#S
+#P
+
+MULT = [*]
+#
+#S
+#P
+
+COMMA = [,]
+#
+#S
+#P
+
+COLON = [:]
+#
+#S
+#P
+
+EQ = [=]
+#
+#S
+#P
+
+VALUE = [0-9]+
+#
+#S
+#P
